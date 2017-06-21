@@ -17,6 +17,7 @@ class gitlab_ci_multi_runner::params {
   $service_stop        = '/usr/bin/gitlab-ci-multi-runner stop'
   $service_status      = '/usr/bin/gitlab-ci-multi-runner status'
   $service_restart     = '/usr/bin/gitlab-ci-multi-runner restart'
+  $service_provider    = undef
 
   case $::osfamily {
     'Debian': {

@@ -14,6 +14,7 @@ class gitlab_ci_multi_runner::service {
     restart    => $gitlab_ci_multi_runner::service_restart,
     hasstatus  => true,
     hasrestart => true,
+    provider   => $gitlab_ci_multi_runner::service_provider,
   }
 
 }
