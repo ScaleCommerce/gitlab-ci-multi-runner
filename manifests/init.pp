@@ -26,7 +26,7 @@
 #
 # [*concurrent*]
 #   Number of concurrents jobs
-#   Defaults to 1 
+#   Defaults to 1
 #
 class gitlab_ci_multi_runner (
   $package_name        = $gitlab_ci_multi_runner::params::package_name,
@@ -37,6 +37,7 @@ class gitlab_ci_multi_runner (
   $service_stop        = $gitlab_ci_multi_runner::params::service_stop,
   $service_status      = $gitlab_ci_multi_runner::params::service_status,
   $service_restart     = $gitlab_ci_multi_runner::params::service_restart,
+  $service_provider    = $gitlab_ci_multi_runner::params::service_provider,
   $manage_package_repo = $gitlab_ci_multi_runner::params::manage_package_repo,
   $user                = $gitlab_ci_multi_runner::params::user,
   $group               = $gitlab_ci_multi_runner::params::group,
