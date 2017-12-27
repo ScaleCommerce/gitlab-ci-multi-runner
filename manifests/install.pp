@@ -4,7 +4,7 @@ class gitlab_ci_multi_runner::install {
 
   if( $gitlab_ci_multi_runner::manage_package_repo ) {
     exec { "Register-GitLab-Repo":
-        command  => "/usr/bin/curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash",
+        command  => "/usr/bin/curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | sudo bash
         user     => root,
     }
   }
