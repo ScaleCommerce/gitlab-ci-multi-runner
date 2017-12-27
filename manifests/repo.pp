@@ -16,7 +16,7 @@ class gitlab_ci_multi_runner::repo {
 
       apt::source { 'gitlab-ci-multi-runner':
         comment  => 'This is an officiel apt repo for Gitlab Ci Multi Runner',
-        location => 'https://packages.gitlab.com/runner/gitlab-ci-multi-runner/debian/',
+        location => 'https://packages.gitlab.com/runner/gitlab-runner/packages/ubuntu/',
         release  => $::lsbdistcodename,
         repos    => 'main',
         key      => {
