@@ -1,7 +1,7 @@
 # == Class gitlab_ci_multi_runner::install
 #
 class gitlab_ci_multi_runner::install(
-  $version = 'latest',
+  $version = $gitlab_ci_multi_runner::version,
 ){
 
   if( $gitlab_ci_multi_runner::manage_package_repo ) {
