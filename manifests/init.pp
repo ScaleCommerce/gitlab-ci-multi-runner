@@ -28,6 +28,11 @@
 #   Number of concurrents jobs
 #   Defaults to 1
 #
+# [*version*]
+#   A version for the gitlab-ci-multi-runner package. This can be to a specfic
+#   version number, present (if you don't want Puppet to update it for you) or
+#   latest.
+#
 class gitlab_ci_multi_runner (
   $package_name        = $gitlab_ci_multi_runner::params::package_name,
   $service_name        = $gitlab_ci_multi_runner::params::service_name,
@@ -44,6 +49,7 @@ class gitlab_ci_multi_runner (
   $concurrent          = $gitlab_ci_multi_runner::params::concurrent,
   $runners             = $gitlab_ci_multi_runner::params::runners,
   $config_file         = $gitlab_ci_multi_runner::params::config_file,
+  $version             = $gitlab_ci_multi_runner::params::version,
 ) inherits gitlab_ci_multi_runner::params {
 
   validate_hash($gitlab_ci_multi_runner::runners)
