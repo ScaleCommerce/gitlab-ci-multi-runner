@@ -1,6 +1,8 @@
 # == Class gitlab_ci_multi_runner::install
 #
-class gitlab_ci_multi_runner::install {
+class gitlab_ci_multi_runner::install(
+  $version = 'latest',
+){
 
   if( $gitlab_ci_multi_runner::manage_package_repo ) {
     exec { "Register-GitLab-Repo":
@@ -10,7 +12,7 @@ class gitlab_ci_multi_runner::install {
   }
 
   package { $gitlab_ci_multi_runner::package_name:
-    ensure => present,
+    ensure => $version,
     tag    => 'gitlab-ci-multi-runner',
     require => Exec['Register-GitLab-Repo'],
   }
